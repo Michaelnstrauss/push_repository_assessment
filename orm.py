@@ -1,13 +1,9 @@
 import sqlite3
-import os
 
-DIR = os.path.dirname(__file__)
-DBFILENAME = 'school.db'
-DBPATH = os.path.join(DIR, DBFILENAME)
 
 class ORM:
     fields = []
-    dbpath = "school.db"
+    dbpath = "data/ttrader.db"
     tablename = ""
 
     def save(self):
@@ -27,6 +23,7 @@ class ORM:
                 tablename=self.tablename, fieldlist=fieldlist, qmarks=qmarks)
 
             values = [getattr(self, field) for field in self.fields]
+            input()
             curs.execute(SQL, values)
 
             self.pk = curs.lastrowid
@@ -72,12 +69,7 @@ class ORM:
         with sqlite3.connect(cls.dbpath) as conn:
             conn.row_factory = sqlite3.Row
             curs = conn.cursor()
-            print(tablename)
-            input()
-            print(whereclause)
-            input()
-            print(values)
-            input()
+
             SQL = """ SELECT * FROM {tablename} {whereclause}; """.format(
                 tablename=cls.tablename, whereclause=whereclause)
 

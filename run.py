@@ -1,15 +1,12 @@
 #! /usr/bin/env python3
-from campus import Campus
-from student import Student
 import os
-from orm import ORM
+from app.orm import ORM
+from app import controller
 
 DIR = os.path.dirname(__file__)
-DBNAME = 'school.db'
-DBPATH = os.path.join(DIR, 'data', DBNAME)
+DBFILENAME = 'ttrader.db'
+DBPATH = os.path.join(DIR, 'data', DBFILENAME)
 
+#child classes default to ORM's dbpath if it is not set
 ORM.dbpath = DBPATH
-bk = Campus(city="city")
-bk.load_text()
-# bkm = Word(word_count='word count')
-# bkm.makeword(word)
+controller.run()
