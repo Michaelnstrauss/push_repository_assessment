@@ -1,0 +1,15 @@
+first, last, id, GPA
+
+In New York, NY:
+
+Lockett, Walker, S000000001, 3.1
+Coleman, Casey, S000000002, 2.7
+Kilome, Franklyn, S000000003, 3.8
+Santiago, Hecton, S000000004, 2.9
+
+In Houston, TX:
+
+Valdez, Framber, S000000005, 3.9
+Peacock, Brad, S000000006, 2.8
+Guduan, Reymin, S000000007, 3.5
+Cole, Gerrit, S000000008, 3.0
